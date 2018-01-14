@@ -35,14 +35,14 @@
       }
 
       public function getById($id) {
-         $sql = "SELECT * FROM $this->tableName WHERE id=" . $id;
+         $sql = "SELECT * FROM $this->tableName WHERE id=$id";
          $con = $this->conn->prepare($sql);
          $con->execute();
          return $con->fetchAll();
       }
 
       public function removeById($id) {
-         $sql = "DELETE FROM $this->tableName WHERE id=" . $id;
+         $sql = "DELETE FROM $this->tableName WHERE id=$id";
          return $this->conn->exec($sql);
       }
 

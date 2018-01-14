@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="../public/css/style.css">
    </head>
    <body>
+      <?php session_start(); ?>
       <?php if(isset($_SESSION['login'])): ?>
          <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
@@ -20,7 +21,7 @@
                   <li><a href="#">Profile</a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#">Logout</a></li>
+                  <li><a href="../public/_destroy.php">Logout</a></li>
                </ul>
             </div>
          </nav>

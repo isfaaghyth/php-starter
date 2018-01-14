@@ -1,5 +1,5 @@
 <?php
-   public class Config {
+   class Config {
       const HOST     = 'localhost';
       const USER     = 'root';
       const PASS     = '';
