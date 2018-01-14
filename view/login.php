@@ -2,6 +2,16 @@
 <?php include_once '../app/data/User.php'; ?>
 <?php if (isset($_SESSION['login'])) header("location:home.php"); ?>
 
+<?php
+   if (isset($_GET['err'])) {
+      if ($_GET['err'] == '401') {
+         echo "password salah";
+      } elseif ($_GET['err'] == '403') {
+         echo "belum terdaftar";
+      }
+   }
+?>
+
 <section id="login">
     <div class="container">
     	<div class="row">
