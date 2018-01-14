@@ -1,6 +1,11 @@
 # php-starter
 Belajar PHP dasar dengan studi kasus login-logout.
 
+```text
+catatan:
+Auth tidak menggunakan hash/encrypt sama sekali.
+```
+
 menggunakan:
 - [x] [PHP PDO](http://php.net/manual/en/book.pdo.php)
 - [x] [PHP Session](http://php.net/manual/en/reserved.variables.session.php)
