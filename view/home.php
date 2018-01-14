@@ -1,7 +1,10 @@
 <?php
    include_once '../public/header.php';
    //cek session login, klau udah logout, direct ke login
-   if (!isset($_SESSION['login'])) header("location:view/login.php");
+   if (!isset($_SESSION['login'])) {
+      header("location:view/login.php");
+      die;
+   }
 ?>
 
 <div class="container">

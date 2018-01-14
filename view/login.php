@@ -2,15 +2,13 @@
 <?php include_once '../app/data/User.php'; ?>
 <?php if (isset($_SESSION['login'])) header("location:home.php"); ?>
 
-<?php
-   if (isset($_GET['err'])) {
-      if ($_GET['err'] == '401') {
-         echo "password salah";
-      } elseif ($_GET['err'] == '403') {
-         echo "belum terdaftar";
-      }
-   }
-?>
+<?php if (isset($_GET['err'])): ?>
+      <?php if ($_GET['err'] == '401'): ?>
+            <div class="alert alert-warning" role="alert">Periksa password anda</div>
+         <?php elseif($_GET['err'] == '403'): ?>
+            <div class="alert alert-danger" role="alert">Anda belum terdaftar</div>
+      <?php endif; ?>
+<?php endif; ?>
 
 <section id="login">
     <div class="container">
@@ -46,19 +44,22 @@
       $email = $_POST['email'];
       $pass = $_POST['password'];
       $users = new User();
-      foreach($users->getByEmail($email) as $user):
-         if (isset($user['email'])) {
+      $get = $users->getByEmail($email);
+      if (!empty($get)) {
+         foreach($get as $user):
             if ($user['password'] == $pass) {
                $_SESSION['login'] = true;
                header("location:home.php");
                break;
             } else {
-               header("location:login.php?err=401");
+               header("location:".$_SERVER['PHP_SELF']."?err=401");
+               die;
             }
-         } else {
-            header("location:login.php?err=403");
-         }
-      endforeach;
+         endforeach;
+      } else {
+         header("location:".$_SERVER['PHP_SELF']."?err=403");
+         die;
+      }
    }
 ?>
 
