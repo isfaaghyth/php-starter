@@ -1,11 +1,12 @@
 <?php include_once '../public/header.php'; ?>
+
 <section id="login">
     <div class="container">
     	<div class="row">
     	    <div class="col-xs-12">
         	    <div class="form-wrap">
                 <h1>Masuk</h1>
-                    <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+                    <form role="form" action="" method="post" id="login-form" autocomplete="off">
                         <div class="form-group">
                             <label for="email" class="sr-only">Email</label>
                             <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
@@ -23,8 +24,9 @@
                     <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
                     <hr>
         	    </div>
-    		</div> <!-- /.col-xs-12 -->
-    	</div> <!-- /.row -->
-    </div> <!-- /.container -->
+    		</div>
+    	</div>
+    </div>
 </section>
+
 <?php include_once '../public/footer.php'; ?>
